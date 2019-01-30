@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView decResult, binResult, octResult, hexResult;
 
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnA, btnB, btnC,
-            btnD, btnE, btnF, btnAdd , btnSub, btnMult , btnDiv, btnEq, btnType, btnCls, btnBack,
+            btnD, btnE, btnF, btnAdd , btnSub, btnMult , btnDiv, btnEq, btnType, btnBack,
             btnMs, btnMc, btnMr, btnMAdd, btnMSub;
 
     private LinearLayout decimalView, binaryView, octalView, hexadecimalView, defaultView;
@@ -149,6 +149,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         });
 
+        btnBack.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                handleClear();
+                return false;
+            }
+        });
     }
 
     @Override
@@ -229,9 +236,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
              // Calc Opts
-            case R.id.btn_cls:
-                handleClear();
-                break;
             case R.id.btn_bks:
                 handleDelete(start);
                 break;
@@ -269,7 +273,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         resetConversionViews();
         setScrollViewHeight(false);
         if (input.getText().length() > 0 || tempResult.getText().length() > 0) {
-            reveal(findViewById(R.id.btn_cls), findViewById(R.id.inputLayout), R.color.colorAccent, true,
+            reveal(findViewById(R.id.btn_bks), findViewById(R.id.inputLayout), R.color.colorAccent, true,
                     new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
@@ -327,7 +331,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void handleError(final String msg) {
         errorState = true;
-        reveal(findViewById(R.id.btn_cls), findViewById(R.id.inputLayout), R.color.error, true,
+        reveal(findViewById(R.id.btn_bks), findViewById(R.id.inputLayout), R.color.error, true,
                 new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -694,7 +698,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnDiv = findViewById(R.id.btn_div);
         btnEq = findViewById(R.id.btn_eq);
         btnType = findViewById(R.id.btn_type);
-        btnCls = findViewById(R.id.btn_cls);
         btnBack = findViewById(R.id.btn_bks);
 
         btnMs = findViewById(R.id.btn_ms);
@@ -726,7 +729,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnDiv.setOnClickListener(this);
         btnEq.setOnClickListener(this);
         btnType.setOnClickListener(this);
-        btnCls.setOnClickListener(this);
         btnBack.setOnClickListener(this);
 
         btnMs.setOnClickListener(this);

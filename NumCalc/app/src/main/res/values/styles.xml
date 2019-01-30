@@ -6,26 +6,32 @@
     </style>
 
     <style name="NumberButtons" parent="android:Widget.Material.Button.Borderless">
-        <item name="android:fontFamily">Monospace</item>
+        <item name="android:fontFamily">@font/metropolis</item>
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:minHeight">@dimen/button_min_height</item>
         <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
     <style name="SettingsButtons" parent="android:Widget.Material.Button.Borderless">
-        <item name="android:fontFamily">Monospace</item>
+        <item name="android:fontFamily">@font/metropolis</item>
         <item name="android:textSize">@dimen/settings_text_size</item>
         <item name="android:minHeight">@dimen/settings_button_min_height</item>
         <item name="android:minWidth">@dimen/settings_button_min_width</item>
         <item name="android:textColor">#fa186f</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
     <style name="OpsButtons" parent="android:Widget.Material.Button.Borderless">
-        <item name="android:fontFamily">Monospace</item>
+        <item name="android:fontFamily">@font/metropolis</item>
         <item name="android:textSize">@dimen/settings_text_size</item>
         <item name="android:minHeight">@dimen/settings_button_min_height</item>
         <item name="android:minWidth">@dimen/settings_button_min_width</item>
         <item name="android:textColor">#0a86fa</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
 </resources>

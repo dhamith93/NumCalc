@@ -2,7 +2,7 @@
 	<dimen name="text_size">45sp</dimen>
 	<dimen name="settings_text_size">25sp</dimen>
 	<dimen name="button_min_height">88dp</dimen>
-	<dimen name="button_min_width">80dp</dimen>
+	<dimen name="button_min_width">88dp</dimen>
 	<dimen name="settings_button_min_height">60dp</dimen>
 	<dimen name="settings_button_min_width">60dp</dimen>
 	<dimen name="input_text_size">40sp</dimen>

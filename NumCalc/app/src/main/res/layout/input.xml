@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/inputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_light"
+    android:elevation="4dp">
+
+    <EditText
+        android:id="@+id/mainInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="@font/metropolis"
+        android:inputType="textNoSuggestions"
+        android:singleLine="true"
+        android:textAlignment="textEnd"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/input_text_size"/>
+
+    <EditText
+        android:id="@+id/tempResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/background_light"
+        android:cursorVisible="false"
+        android:fontFamily="@font/metropolis"
+        android:inputType="textNoSuggestions"
+        android:singleLine="true"
+        android:textAlignment="textEnd"
+        android:textColor="#FF8B8B8B"
+        android:textIsSelectable="true"
+        android:textSize="@dimen/temp_result_text_size"/>
+</LinearLayout>

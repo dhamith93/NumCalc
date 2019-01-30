@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NumCalc</string>
+    <string name="default_conversion_msg">Nothing to convert…</string>
+    <string name="binary">Binary</string>
+    <string name="octal">Octal</string>
+    <string name="decimal">Decimal</string>
+    <string name="hexadecimal">Hexadecimal</string>
+</resources>

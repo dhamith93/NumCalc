@@ -7,10 +7,10 @@
 
 ### Screenshots
 
-![](screenshots/one.png)
+<img src="https://raw.githubusercontent.com/dhamith93/NumCalc/master/screenshots/one.png" width="400px">
 
-![](screenshots/two.png)
+<img src="https://raw.githubusercontent.com/dhamith93/NumCalc/master/screenshots/two.png" width="400px">
 
-![](screenshots/three.png)
+<img src="https://raw.githubusercontent.com/dhamith93/NumCalc/master/screenshots/three.png" width="400px">
 
-![](screenshots/four.png)
+<img src="https://raw.githubusercontent.com/dhamith93/NumCalc/master/screenshots/four.png" width="400px">

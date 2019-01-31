@@ -61,6 +61,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (BuildConfig.DEBUG) {
+            Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler());
+        }
+
         setContentView(R.layout.activity_main);
 
         input = findViewById(R.id.mainInput);

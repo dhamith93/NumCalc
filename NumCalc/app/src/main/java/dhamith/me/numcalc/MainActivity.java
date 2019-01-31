@@ -15,7 +15,6 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -58,6 +57,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private final int SOLVE_ON_FLY = 1;
     private boolean errorState;
 
+    // (Only if noOfProcs <= 4): to make sure convert input only if input changed
+    private boolean inputChanged;
+    private boolean slideViewExpanded;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +86,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         currentRadix = RADIX_HEX;
         errorState = false;
+        inputChanged = false;
+        slideViewExpanded = false;
 
         noOfProcs = Runtime.getRuntime().availableProcessors();
 
@@ -95,9 +100,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void afterTextChanged(Editable s) {
+                inputChanged = true;
                 solveExpression(SOLVE_ON_FLY);
-                if (noOfProcs > 4) {
+                if (noOfProcs > 4 || slideViewExpanded) {
                     convertInputOnFly();
+                    inputChanged = false;
                 }
             }
         });
@@ -108,9 +115,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
-                if (noOfProcs <= 4 && newState == SlidingUpPanelLayout.PanelState.EXPANDED) {
+                if (noOfProcs <= 4 && inputChanged && newState == SlidingUpPanelLayout.PanelState.DRAGGING) {
                     convertInputOnFly();
+                    inputChanged = false;
                 }
+
+                slideViewExpanded = (newState == SlidingUpPanelLayout.PanelState.EXPANDED);
             }
         });
 
@@ -165,6 +175,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        inputChanged = true;
         int start = input.getSelectionStart();
         if (errorState) {
             input.setText("");
